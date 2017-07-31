@@ -3,7 +3,7 @@ package detectores_de_humo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sala_Grande implements IDetector,Visitable{
+public class Sala_Grande implements IDetector{
 
 	private List<Detector> detectores;
 	

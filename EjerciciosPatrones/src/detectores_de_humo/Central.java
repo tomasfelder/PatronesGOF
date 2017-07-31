@@ -3,7 +3,7 @@ package detectores_de_humo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Central implements Visitor {
+public class Central {
 	
 	private static volatile Central central;
 	private List<IDetector> detectores;
@@ -16,21 +16,24 @@ public class Central implements Visitor {
 		return (central==null) ? new Central() : central;
 	}
 	
-	public int indiceSeguridad() {
-		return 0;
+	public void agregarDetector(IDetector d){
+		detectores.add(d);
 	}
 	
-	@Override
-	public void visitDetector(Detector d) {
+	public void encenderDetector(int i){
+		detectores.get(i).encender();
+	}
+	
+	public double indiceSeguridad() {
+		IndiceSeguridad v = new IndiceSeguridad();
+		for(IDetector d: detectores)
+			d.accept(v);
 		
-	}
-
-	@Override
-	public void visitSalaGrande(Sala_Grande s) {
-		// TODO Auto-generated method stub
-		
+		return v.porcentaje();
 	}
 	
-	
+	public int cantDetectores(){
+		return detectores.size();
+	}
 	
 }

@@ -1,6 +1,6 @@
 package detectores_de_humo;
 
-public class Detector implements IDetector,Visitable {
+public class Detector implements IDetector {
 	
 	private boolean encendido;
 	private int id;
@@ -20,9 +20,18 @@ public class Detector implements IDetector,Visitable {
 		encendido=false;
 		cantApagados++;
 	}
-
+	
+	public boolean estaEncendido(){
+		return encendido;
+	}
+	
 	@Override
 	public void accept(Visitor v) {
 		v.visitDetector(this);
 	}
+	
+	public int cantApagados(){
+		return cantApagados;
+	}
+	
 }
