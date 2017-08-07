@@ -28,7 +28,6 @@ public class Central {
 		IndiceSeguridad v = new IndiceSeguridad();
 		for(IDetector d: detectores)
 			d.accept(v);
-		
 		return v.porcentaje();
 	}
 	
