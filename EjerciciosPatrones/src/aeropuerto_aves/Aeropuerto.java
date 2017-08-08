@@ -10,5 +10,8 @@ public class Aeropuerto {
 		VisitorCodigoError vc = new VisitorCodigoError(200);
 		s1.accept(vc);
 		System.out.println(vc.etiquetas());
+		IDispositivo d20 = new Dispositivo("D20");
+		d20.agregar(s1);
 	}
+
 }

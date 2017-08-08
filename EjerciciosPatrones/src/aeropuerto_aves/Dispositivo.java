@@ -16,13 +16,13 @@ public class Dispositivo implements IDispositivo {
 	@Override
 	public void agregar(IDispositivo d) {
 		// TODO Auto-generated method stub
-
+		throw new UnsupportedOperationException("No se puede agregar un hijo a una hoja");
 	}
 
 	@Override
 	public void remover(IDispositivo d) {
 		// TODO Auto-generated method stub
-
+		throw new UnsupportedOperationException("No se puede agregar un hijo a una hoja");
 	}
 
 	@Override
